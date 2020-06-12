@@ -561,37 +561,63 @@
     <!-- добавить в класс is-hidden -->
     <div class="backdrop" data-backdrop>
       <div class="modal">
-        <form action="" class="form">
-          <strong class="form-title"
-            >Оставьте свои данные, мы вам перезвоним</strong
-          >
-        </form>
         <button class="button-close" data-close-modal>
           <img src="./image/icon-close.svg" alt="Закрыть" width="11" />
         </button>
-        <button class="button">Отправить</button>
+
+        <!-- Форма модального окна-->
+        <form class="form">
+          <!-- Заголовок -->
+          <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+
+          <!-- Имя -->
+          <div class="form-field">
+            <label for="name">Имя</label>
+            <input type="text" name="name" id="name" placeholder=" " />
+          </div>
+
+          <!-- Телефон -->
+          <div class="form-field">
+            <label for="tel">Телефон</label>
+            <input type="text" name="tel" id="tel" placeholder=" " />
+          </div>
+
+          <!-- Почта -->
+          <div class="form-field">
+            <label for="email">Почта</label>
+            <input type="text" name="email" id="email" placeholder=" " />
+          </div>
+
+          <!-- Поле для коментария -->
+          <div class="form-field">
+            <label for="comment">Оставьте комментарий</label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols=""
+              rows="10"
+              placeholder=" "
+            ></textarea>
+          </div>
+
+          <!-- Чек-бокс -->
+          <div>
+            <input id="hobby-1" name="hobby" type="checkbox" value="music" />
+            <label for="hobby-1"
+              >Соглашаюсь с рассылкой и принимаю
+              <a href="">Условия договора</a></label
+            >
+          </div>
+
+          <button class="button" type="submit">Отправить</button>
+        </form>
       </div>
     </div>
 
-    <script>
-      const refs = {
-        openModalBtn: document.querySelector('[data-open-modal]'),
-        closeModalBtn: document.querySelector('[data-close-modal]'),
-        backdrop: document.querySelector('[data-backdrop]'),
-      };
+    <!-- Скрипт для модального окна -->
+    <script src="./JS/modal.js"></script>
 
-      refs.openModalBtn.addEventListener('click', toggleModal);
-      refs.closeModalBtn.addEventListener('click', toggleModal);
-
-      refs.backdrop.addEventListener('click', logBackdropClick);
-
-      function toggleModal() {
-        refs.backdrop.classList.toggle('is-hidden');
-      }
-
-      function logBackdropClick() {
-        console.log('Это клик в бекдроп');
-      }
-    </script>
+    <!-- Скрипт для формы -->
+    <script src=""></script>
   </body>
 </html>

@@ -344,10 +344,13 @@
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   padding: 40px;
 }
 
 .form-title {
+  margin-top: 0px;
   margin-bottom: 30px;
 
   font-weight: 700;
