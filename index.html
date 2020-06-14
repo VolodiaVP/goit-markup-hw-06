@@ -63,7 +63,7 @@
           Эффективные решения<br />
           для вашего бизнеса
         </h1>
-        <button class="button first" type="button" data-open-modal>
+        <button class="button first" type="button" data-modal-open>
           Заказать услугу
         </button>
       </section>
@@ -538,14 +538,14 @@
         <div class="subscribe-container">
           <p class="text appeal">ПОДПИШИСЬ НА РАССЫЛКУ</p>
           <!-- Заметка для ментора - форму добавил просто для практики -->
-          <form class="form" action="#" method="POST">
+          <form class="form-footer">
             <input
               class="email"
               type="email"
               name="E-mail"
               placeholder="E-mail"
             />
-            <button class="button subscribe">
+            <button class="button subscribe" type="submit">
               Подпишитесь
               <svg class="icon-send">
                 <use href="./image/sprite.svg#icon-send"></use>
@@ -558,66 +558,101 @@
       <p class="developers">2020 | Developed by GoIT Students</p>
     </footer>
 
-    <!-- добавить в класс is-hidden -->
-    <div class="backdrop" data-backdrop>
+    <!-- Бекдроп и модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="button-close" data-close-modal>
-          <img src="./image/icon-close.svg" alt="Закрыть" width="11" />
+        <button class="button-close" data-modal-close>
+          <svg class="icon-close">
+            <use href="./image/sprite.svg#icon-close"></use>
+          </svg>
         </button>
 
         <!-- Форма модального окна-->
-        <form class="form">
+        <form class="form-modal" autocomplete="off">
           <!-- Заголовок -->
-          <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
 
           <!-- Имя -->
           <div class="form-field">
-            <label for="name">Имя</label>
-            <input type="text" name="name" id="name" placeholder=" " />
+            <input
+              class="form-input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder=" "
+              autofocus
+            />
+            <label class="form-label" for="name">Имя</label>
+            <svg class="icon-form" width="18px">
+              <use href="./image/sprite.svg#name"></use>
+            </svg>
           </div>
 
           <!-- Телефон -->
           <div class="form-field">
-            <label for="tel">Телефон</label>
-            <input type="text" name="tel" id="tel" placeholder=" " />
+            <input
+              class="form-input"
+              type="text"
+              name="tel"
+              id="tel"
+              placeholder=" "
+            />
+            <label class="form-label" for="tel">Телефон</label>
+            <svg class="icon-form" width="18px">
+              <use href="./image/sprite.svg#phone-form"></use>
+            </svg>
           </div>
 
           <!-- Почта -->
           <div class="form-field">
-            <label for="email">Почта</label>
-            <input type="text" name="email" id="email" placeholder=" " />
+            <input
+              class="form-input"
+              type="text"
+              name="email"
+              id="email"
+              placeholder=" "
+            />
+            <label class="form-label" for="email">Почта</label>
+            <svg class="icon-form" width="18px">
+              <use href="./image/sprite.svg#envelope-form"></use>
+            </svg>
           </div>
 
           <!-- Поле для коментария -->
-          <div class="form-field">
-            <label for="comment">Оставьте комментарий</label>
+          <div class="form-field comment">
             <textarea
+              class="textarea"
               name="comment"
               id="comment"
               cols=""
               rows="10"
               placeholder=" "
             ></textarea>
+            <label class="comment-label" for="comment">Комментарий</label>
           </div>
 
           <!-- Чек-бокс -->
-          <div>
-            <input id="hobby-1" name="hobby" type="checkbox" value="music" />
-            <label for="hobby-1"
+          <div class="form-checkbox">
+            <input
+              class="checkbox-input"
+              id="submission"
+              name="submission"
+              type="checkbox"
+              value="submission"
+            />
+            <span class="icon-check"></span>
+            <label class="checkbox-label" for="submission"
               >Соглашаюсь с рассылкой и принимаю
-              <a href="">Условия договора</a></label
+              <a class="agreement" href="">Условия договора</a></label
             >
           </div>
 
-          <button class="button" type="submit">Отправить</button>
+          <button class="button send" type="submit">Отправить</button>
         </form>
       </div>
     </div>
 
     <!-- Скрипт для модального окна -->
     <script src="./JS/modal.js"></script>
-
-    <!-- Скрипт для формы -->
-    <script src=""></script>
   </body>
 </html>
